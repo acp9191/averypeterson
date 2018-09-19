@@ -13,10 +13,20 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
 
   if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-        document.getElementById("topBtn").style.opacity = 1;
-    } else {
-        document.getElementById("topBtn").style.opacity = 0;
-    }
+    document.getElementById("topBtn").style.opacity = 1;
+    document.getElementById("topBtn").style.cursor = 'pointer';
+
+    document.querySelector(".social-wrapper").style.opacity = 1;
+  } else {
+    document.getElementById("topBtn").style.opacity = 0;
+    document.getElementById("topBtn").style.cursor = 'default';
+  } 
+
+  if (document.body.scrollTop > 100) {
+    document.querySelector('.main-nav').classList.add('shrink');
+  } else {
+    document.querySelector('.main-nav').classList.remove('shrink');
+  }
 }
 
 var init = false;
@@ -70,4 +80,12 @@ function setDate() {
 }
 
 setInterval(setDate, 1000);
+
+$(document).ready(function() {
+  $('.hamburger').on('click', function() {
+    $(this).toggleClass('open');
+  });
+});
+
+
 
