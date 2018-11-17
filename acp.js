@@ -87,5 +87,12 @@ $(document).ready(function() {
   });
 });
 
-
+$(window).resize(function() {
+  console.log('scaling');
+  if($(window).width() <= 767) {
+    $('.non-initials').addClass("scale-out-horizontal");
+  } else {
+    $('.non-initials').removeClass("scale-out-horizontal");
+  }
+});
 

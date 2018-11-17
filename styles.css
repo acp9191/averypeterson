@@ -1,3 +1,13 @@
+.non-initials {
+  display: inline-block;
+}
+
+.scale-out-horizontal {
+  -webkit-animation: scale-out-horizontal 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          animation: scale-out-horizontal 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          display: none;
+}
+
 .welcome {
   font-size: 40px;
   text-shadow: none;
@@ -230,7 +240,7 @@ a:hover {
 	text-align: center;
 	padding: 20px 0;
   margin: 0 auto;
-  width: 800px;
+  width: 100%;
   -webkit-animation: tracking-in-expand 1s cubic-bezier(0.22, 0.61, 0.38, 1.24) both;
           animation: tracking-in-expand 1s cubic-bezier(0.22, 0.61, 0.38, 1.24) both;
 }
@@ -252,7 +262,7 @@ a:hover {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 0, 0, 1), rgba(0, 255, 0, 1), rgba(0, 0, 255,1), rgba(255, 255, 255, 0));
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -425,6 +435,31 @@ p {
             transform: translateY(0) rotateX(0) scale(1);
     -webkit-transform-origin: 50% 1400px;
             transform-origin: 50% 1400px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scale-out-horizontal {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-horizontal {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
     opacity: 1;
   }
 }
